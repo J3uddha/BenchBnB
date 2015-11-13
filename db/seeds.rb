@@ -10,3 +10,13 @@ bench1 = Bench.create(
     description: "This is the first bench on the map, AKA SF",
     lat: 37.7758 ,
     lon: -122.435)
+
+bench2 = Bench.create(
+    description: "App Academy NYC",
+    lat: 40.7250,
+    lon: -73.9968)
+
+bench3 = Bench.create(
+    description: "My house",
+    lat: 40.6839204,
+    lon: -73.9170811)
