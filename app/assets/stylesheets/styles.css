@@ -1,0 +1,26 @@
+html {
+  font-family: monospace;
+  text-align: center;
+  margin: auto;
+}
+
+ul {
+  list-style-position: inside;
+  margin-left: 38%;
+}
+
+li {
+  text-align: left;
+}
+
+.new-bench {
+  width: 180px;
+}
+
+label {
+  display: block;
+  padding: 10px;
+}
+.new-bench input {
+  display: block;
+}

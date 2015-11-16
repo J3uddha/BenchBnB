@@ -9,11 +9,13 @@ var BenchForm = React.createClass({
   },
 
   getInitialState: function () {
+    var status = this.blankAttrs;
+
     if (this.props.location.query.lat !== undefined) {
-      this.blankAttrs.lat = this.props.location.query.lat;
-      this.blankAttrs.lon = this.props.location.query.lng;
+      status.lat = this.props.location.query.lat;
+      status.lon = this.props.location.query.lng;
     }
-    return this.blankAttrs;
+    return status;
   },
 
   createBench: function (e) {
@@ -27,9 +29,12 @@ var BenchForm = React.createClass({
     this.setState(this.blankAttrs);
   },
 
+
+
   render: function () {
+
     return (
-      <form className="new-bench" onSubmit={this.createBench} >
+      <form className="new-bench" onSubmit={this.createBench}>
 
         <label>Lat:
           <input
@@ -62,7 +67,7 @@ var BenchForm = React.createClass({
             valueLink={this.linkState("description")}
             />
         </label>
-
+        
           <button>Add Bench</button>
       </form>
     );

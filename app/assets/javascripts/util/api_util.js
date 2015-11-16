@@ -21,7 +21,7 @@ ApiUtil = {
       data: {bench: bench},
       success: function (data) {
         ApiActions.receiveBench(data);
-        console.log("success!");
+        console.log("bench created");
       }
     });
   }
