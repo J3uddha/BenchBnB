@@ -24,15 +24,5 @@ $(function () {
       </Route>
   );
 
-  // var Benches = React.createClass({
-  //   render: function () {
-  //     return (
-  //     );
-  //   }
-  // });
-
-
-
-
   React.render(<Router>{routes}</Router>, root);
 });

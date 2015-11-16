@@ -19,9 +19,15 @@
     },
 
     dispatcherID: AppDispatcher.register(function (payload) {
-      if (payload.actionType === BenchConstants.BENCHES_RECEIVED) {
-        resetBenches(payload.benches);
-        BenchStore.emit(CHANGE_EVENT);
+      switch (payload.actionType) {
+        case BenchConstants.BENCHES_RECEIVED:
+          resetBenches(payload.benches);
+          BenchStore.emit(CHANGE_EVENT);
+          break;
+        case BenchConstants.BENCH_RECEIVED:
+          _benches.push(payload.bench);
+          BenchStore.emit(CHANGE_EVENT);
+          break;
       }
     })
 

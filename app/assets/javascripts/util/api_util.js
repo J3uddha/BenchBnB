@@ -1,4 +1,5 @@
 ApiUtil = {
+
   fetchBenches: function (bounds) {
     console.log("fetching...");
     $.ajax({
@@ -12,5 +13,16 @@ ApiUtil = {
     });
   },
 
-  
+  createBench: function (bench) {
+    $.ajax({
+      url: '/api/benches',
+      method: 'POST',
+      dataType: 'json',
+      data: {bench: bench},
+      success: function (data) {
+        ApiActions.receiveBench(data);
+        console.log("success!");
+      }
+    });
+  }
 };
