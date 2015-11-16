@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require react
 //= require react_ujs
+//= require ReactRouter.min.js
 //= require flux
 //= require eventemitter
 //= require components
