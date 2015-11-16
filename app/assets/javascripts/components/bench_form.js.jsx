@@ -4,10 +4,15 @@ var BenchForm = React.createClass({
   blankAttrs: {
     lat: '',
     lon: '',
+    seating: '',
     description: ''
   },
 
   getInitialState: function () {
+    if (this.props.location.query.lat !== undefined) {
+      this.blankAttrs.lat = this.props.location.query.lat;
+      this.blankAttrs.lon = this.props.location.query.lng;
+    }
     return this.blankAttrs;
   },
 
@@ -39,6 +44,14 @@ var BenchForm = React.createClass({
             type="text"
             id="lon"
             valueLink={this.linkState("lon")}
+            />
+        </label>
+
+        <label># of Seats:
+          <input
+            type="text"
+            id="seating"
+            valueLink={this.linkState("seating")}
             />
         </label>
 

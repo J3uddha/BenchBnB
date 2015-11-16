@@ -8,7 +8,8 @@ class Api::BenchesController < ApplicationController
     @bench = Bench.new(bench_params)
 
     if @bench.save
-      render :show
+      # @benches = Bench.in_bounds(params[:bounds])
+      redirect_to '#/'
     else
       render json: @index.errors.full_messages, status: 422
     end

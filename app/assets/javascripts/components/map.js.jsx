@@ -27,6 +27,10 @@ componentDidMount: function () {
 
     ApiUtil.fetchBenches(bounds);
   }.bind(this));
+
+  this.map.addListener('click', function (e) {
+    this.props.handleMapClick(e.latLng);
+  }.bind(this));
 },
 
 _onChange: function () {
@@ -43,11 +47,11 @@ _onChange: function () {
 
     marker.setMap(this.map);
     this.state.markers.push(marker);
-    marker.addListener('mouseover', function () {
-    marker.setAnimation(google.maps.Animation.BOUNCE);
-    marker.setAnimation(google.maps.Animation.DROP);
-  });
 
+    marker.addListener('mouseover', function () {
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+      // marker.setAnimation(google.maps.Animation.DROP);
+    });
 
     for (i=0; i < this.state.markers.length; i++) {
         var marker1 = this.state.markers[i];
@@ -60,19 +64,7 @@ _onChange: function () {
         }
       }
     }
-    // console.log(marker.id);
-
   }.bind(this));
-
-  // var newBenchesD = newBenches.map(function (b) { return b.description; });
-  // var oldMarkers = [];
-  // this.state.markersD.forEach(function (mD, i) {
-  //   if (newBenchesD.indexOf(mD) !== -1) {
-  //     oldMarkers.push(mD);
-  //
-  //   }
-  //   markersD -= oldMarkers;
-  // });
 },
 
   render: function () {
@@ -82,11 +74,3 @@ _onChange: function () {
     );
   }
 });
-// this.props.benches.lat
-
-
-// case when benches in store, no marker on component
-//
-// case when bench not in store, marker on component
-//
-// case
